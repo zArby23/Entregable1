@@ -8,6 +8,6 @@ namespace BancoMundial
 {
     interface IAuditable
     {
-        public void AuditarTransaccion(string tipo, float cantidad) { }
+        void AuditarTransaccion(string tipo, float cantidad) { }
     }
 }
