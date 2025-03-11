@@ -11,7 +11,8 @@ namespace BancoMundial
 
         static void Main(string[] args)
         {
-            Class1 cls = new Class1();
+            
+            Program cls = new Program();
             int op = 0, sr = 0, sw = 0;
             do
             {
@@ -24,26 +25,70 @@ namespace BancoMundial
                 sw = 1;
                 if (sr == 1)
                 {
-                    op = cls.MenuPrincipal();
-                    switch (op)
+                    string Direccion, NIT, Nombre, Apellido;
+                    double Saldo;
+
+                    Console.WriteLine("Ingrese el Nombre del usuario: ");
+                    Nombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese el Apellido del usuario: ");
+                    Apellido = Console.ReadLine();
+                    Console.WriteLine("Ingrese el NIT/Cedula del usuario: ");
+                    NIT = Console.ReadLine();
+                    Console.WriteLine("Ingrese la Direccion del usuario: ");
+                    Direccion = Console.ReadLine();
+                    Console.WriteLine("Ingrese el Saldo del usuario: ");
+                    Saldo = Double.Parse(Console.ReadLine());
+
+                    CuentaCorriente CuentaCor = new CuentaCorriente(Direccion, NIT, Saldo, Nombre, Apellido);
+
+
+                    do
                     {
-                        case 1:
 
-                            break;
-                        case 2:
+                        op = cls.MenuPrincipal();
+                        switch (op)
+                        {
+                            case 1:
+                                String Tipo = "Depositar";
+                                double deposito;
 
-                            break;
-                        case 3:
+                                Console.WriteLine("Ingrese el valor a Depositar: ");
 
-                            break;
-                        case 4:
 
-                            break;
-                        default:
-                            Console.WriteLine("Saliendo del programa hujfjjf");
-                            break;
+                                deposito = Double.Parse(Console.ReadLine());
+                                CuentaCor.Depositar(deposito);
+                                CuentaCor.AuditarTransaccion(Tipo, deposito);
+                                break;
+                            case 2:
+                                Tipo = "Retirar";
 
-                    }//Fin switch
+                                Console.WriteLine("Ingrese el valor a Retirar: ");
+
+                                deposito = Double.Parse(Console.ReadLine());
+                                CuentaCor.Retirar(deposito);
+                                CuentaCor.AuditarTransaccion(Tipo, deposito);
+
+                                break;
+                            case 3:
+
+                                Console.WriteLine(CuentaCor.Consultar());
+
+                                break;
+                            case 4:
+
+                                CuentaCor.MostrarInformacion();
+
+                                break;
+                            default:
+
+                                Console.WriteLine("¿Desea ingresar nuevos datos de usuario?: \n1 = si  \n2 = no");
+                                sr = Int32.Parse(Console.ReadLine());
+
+                                Console.WriteLine("Saliendo del menu principal");
+                                break;
+                        }
+
+                    } while (op < 5 && op > 0);
 
                 }
                 else
@@ -59,7 +104,7 @@ namespace BancoMundial
 
 
             }
-            while (op != 5 && sr != 2);
+            while (sr != 2);
 
         }
 
@@ -111,7 +156,7 @@ namespace BancoMundial
                 + "5. Terminar";
             Console.WriteLine(menu);
 
-            int vreUsu = 0;
+            int vreUsu;
 
             do
             {
