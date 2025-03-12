@@ -9,17 +9,17 @@ namespace PacManGame
     abstract class Personaje
     {
         String nombre;
-        Movimiento velMovimiento;
+        float velMovimiento;
 
-        public Personaje(String nombre, Movimiento velMovimiento)
+        public Personaje(String nombre)
         {
             this.nombre = nombre;
-            this.velMovimiento = velMovimiento;
+            this.velMovimiento = 1;
         }
 
         public abstract void Mover();
 
-        public void MostrarInformación()
+        public void MostrarInformacion()
         {
             Console.WriteLine("Nombre: " + nombre);
             Console.WriteLine("Velocidad de movimiento: " + velMovimiento);

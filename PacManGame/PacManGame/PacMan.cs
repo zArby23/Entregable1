@@ -11,7 +11,7 @@ namespace PacManGame
     {
         public Movimiento DireccionActual = Movimiento.Izquierda;
         
-        public PacMan(String nombre, Movimiento velMovimiento): base(nombre, velMovimiento)
+        public PacMan(String nombre): base(nombre)
         {
         }
 

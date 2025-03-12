@@ -8,6 +8,11 @@ namespace PacManGame
 {
     class Inky
     {
+        public string nombre { get; set; }
+        public Inky()
+        {
+            this.nombre = "Inky";
+        }
         public void Movement()
         {
             Console.WriteLine("Inky usa la posición de PacMan y Blinky para moverse.");

@@ -7,7 +7,11 @@ namespace PacManGame
 {
     class Clyde
     {
-        
+        public string nombre { get; set; }
+        public Clyde()
+        {
+            this.nombre = "Clyde";
+        }
         public void Movement()
         {
             var rand = new Random();
