@@ -32,14 +32,12 @@ namespace BancoMundial
 
         public void Depositar(double cantidad){
             Boolean opp;
-            Console.WriteLine("Saldo actual: " + Saldo);
-            Console.WriteLine("Desea depositar" + cantidad + " a su cuenta? (s/n)");
+            Console.WriteLine("Desea depositar " + cantidad + " a su cuenta? (s/n)");
             string rep = Console.ReadLine().ToLower();
             opp = (rep == "s") ? true : false;
             if (opp)
             {
                 Saldo = Saldo + cantidad;
-                Console.WriteLine(Consultar().ToString());
             }
             else return;
         }
@@ -52,12 +50,11 @@ namespace BancoMundial
             }
             else{
                 Boolean opp;
-                Console.WriteLine("Desea retirar" + cantidad + " a su cuenta? (s/n)");
+                Console.WriteLine("Desea retirar " + cantidad + " a su cuenta? (s/n)");
                 string rep = Console.ReadLine().ToLower();
                 opp = (rep == "s") ? true : false;
                 if (opp){
                     Saldo = Saldo - cantidad;
-                    Console.WriteLine( Consultar().ToString() );
                 }
                 else return; 
             }
