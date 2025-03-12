@@ -9,9 +9,9 @@ namespace PacManGame
     internal class Personaje
     {
         String nombre;
-        double velMovimiento;
+        Movimiento velMovimiento;
 
-        public Personaje(String nombre, double velMovimiento)
+        public Personaje(String nombre, Movimiento velMovimiento)
         {
             this.nombre = nombre;
             this.velMovimiento = velMovimiento;
