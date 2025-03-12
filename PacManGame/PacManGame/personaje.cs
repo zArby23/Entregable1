@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PacManGame
 {
-    internal class Personaje
+    abstract class Personaje
     {
         String nombre;
         Movimiento velMovimiento;
@@ -17,10 +17,7 @@ namespace PacManGame
             this.velMovimiento = velMovimiento;
         }
 
-        public void Mover()
-        {
-            Console.WriteLine("Moviendo personaje");
-        }
+        public abstract void Mover();
 
         public void MostrarInformación()
         {
